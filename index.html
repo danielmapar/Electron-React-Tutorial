@@ -1,0 +1,37 @@
+<head>
+</head>
+<body>
+  <h1>Video Info</h1>
+  <form>
+    <div>
+      <label>Select video</label>
+      <input type="file" accept="video/*" />
+    </div>
+    <button type="submit">Get info</button>
+  </form>
+
+  <h1 id="result"></h1>
+
+  <script>
+    // We have access to require in electron (we dont have that in the browser)
+    // We have access to nodejs + browser features
+    const electron = require('electron');
+    const { ipcRenderer } = electron;
+
+    // Communicate between the window and the electron process
+    // inter-process communication
+
+    document.querySelector('form').addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const { path } = document.querySelector('input').files[0];
+      // Sendming message to electron process
+      ipcRenderer.send('video:submit', path);
+    })
+
+    ipcRenderer.on('video:metadata', (event, duration) => {
+      document.querySelector('#result').innerHTML = `Video is ${duration} seconds`;
+    });
+
+  </script>
+</body>

@@ -1,0 +1,23 @@
+{
+  "name": "electron-react-tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "electron": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielmapar/Electron-React-Tutorial.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielmapar/Electron-React-Tutorial/issues"
+  },
+  "homepage": "https://github.com/danielmapar/Electron-React-Tutorial#readme",
+  "dependencies": {
+    "electron": "^1.8.3",
+    "fluent-ffmpeg": "^2.1.2"
+  }
+}
