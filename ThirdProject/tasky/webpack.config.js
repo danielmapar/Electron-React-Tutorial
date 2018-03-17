@@ -2,7 +2,7 @@ var webpack = require('webpack');
 var path = require('path');
 var fs = require('fs');
 
-const runOnBrowser = true;
+const runOnBrowser = false;
 
 var nodeModules = {};
 fs.readdirSync('node_modules')

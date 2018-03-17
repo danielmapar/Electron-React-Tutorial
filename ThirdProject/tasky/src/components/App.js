@@ -7,6 +7,10 @@ import TasksShow from "./TasksShow";
 import Timer from "../utils/Timer";
 import Settings from "./Settings";
 
+const electron = require('electron');
+
+const { ipcRenderer } = electron;
+
 const APP_DATA = JSON.parse(localStorage.getItem("__INITIAL_STATE__"));
 
 const INITIAL_STATE = {
@@ -48,11 +52,11 @@ class App extends Component {
   };
 
   updateTrayText = title => {
-
+    ipcRenderer.send('update-timer', title);
   };
 
   timerHasExpired = () => {
-
+    ipcRenderer.send('update-timer', "");
   };
 
   // -------- end of electron event handerls ----------
