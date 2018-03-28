@@ -8,7 +8,6 @@ import Timer from "../utils/Timer";
 import Settings from "./Settings";
 
 const electron = require('electron');
-
 const { ipcRenderer } = electron;
 
 const APP_DATA = JSON.parse(localStorage.getItem("__INITIAL_STATE__"));
